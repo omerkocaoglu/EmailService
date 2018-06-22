@@ -1,0 +1,19 @@
+{
+  "name": "omerkocaoglu/email-service",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Omer Kocaoglu",
+      "email": "okocaoglu05@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "OmerKocaoglu\\EmailService\\": "src"
+    }
+  },
+  "require": {
+    "sendgrid/sendgrid": "~7"
+  }
+}
