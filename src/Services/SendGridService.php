@@ -126,7 +126,7 @@ class SendGridService extends ServiceBase
         try {
             /** @var Response $response */
             $response = $send_grid->send($this->email);
-            if ($response->statusCode() !== HttpStatusCode::OK) {
+            if ($response->statusCode() >= 400) {
                 return $this->createErrorDetail(
                     HttpStatusCode::INTERNAL_SERVER_ERROR,
                     $response->body()
