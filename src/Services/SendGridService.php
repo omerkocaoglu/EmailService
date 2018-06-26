@@ -3,6 +3,7 @@
 namespace OmerKocaoglu\EmailService\Services;
 
 use OmerKocaoglu\EmailService\Error\HttpStatusCode;
+use OmerKocaoglu\EmailService\Model\SendGrid\SendGridResponseModel;
 use OmerKocaoglu\EmailService\ServiceBase;
 use SendGrid\Mail\Mail;
 use SendGrid\Response;
@@ -133,12 +134,24 @@ class SendGridService extends ServiceBase
                 );
             }
 
-            return $response;
+            return $this->createSuccessfulResponseModel($response);
         } catch (\Exception $exception) {
             return $this->createErrorDetail(
                 HttpStatusCode::INTERNAL_SERVER_ERROR,
                 $exception->getMessage()
             );
         }
+    }
+
+    /**
+     * @param Response $response
+     * @return SendGridResponseModel
+     */
+    private function createSuccessfulResponseModel($response)
+    {
+        $model = new SendGridResponseModel();
+        $model->status_code = $response->statusCode();
+        $model->body [] = $response->body();
+        return $model;
     }
 }

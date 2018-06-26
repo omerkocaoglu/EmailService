@@ -4,8 +4,50 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1c985e915c1e141bdee14551d15bafc0",
+    "content-hash": "a06ce3e330687764c4a50ecd81c9d983",
     "packages": [
+        {
+            "name": "fabs/serialize",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Fabsolute/PHP-Serialize.git",
+                "reference": "5fcb4bc87216902276cc3661d7d588358324dc05"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Fabsolute/PHP-Serialize/zipball/5fcb4bc87216902276cc3661d7d588358324dc05",
+                "reference": "5fcb4bc87216902276cc3661d7d588358324dc05",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Fabs\\Serialize": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ahmet Turk",
+                    "email": "ahmetturk93@gmail.com",
+                    "homepage": "https://github.com/fabsolute"
+                }
+            ],
+            "description": "Php serialization",
+            "keywords": [
+                "php serialization",
+                "serialization",
+                "serialize"
+            ],
+            "time": "2017-12-28T14:12:50+00:00"
+        },
         {
             "name": "sendgrid/php-http-client",
             "version": "3.9.6",
@@ -117,7 +159,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "fabs/serialize": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
